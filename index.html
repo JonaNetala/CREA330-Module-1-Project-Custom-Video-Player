@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonathan Netala's Custom HTML5 Video Player</title>
+
+  <!-- Font Awesome for Icons -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous"
+  />
+
+  <!-- Stylesheets -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="progress.css">
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1 id="player-heading">Custom Video Player (Click to Start)</h1>
+    <div class="video-player" role="region" aria-labelledby="player-heading">
+      <video id="video" src="assets/Video.mp4" poster="assets/poster.png">
+        <track kind="captions" src="assets/subtitles.vtt" srclang="en" label="English" default>
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Video Controls -->
+      <div class="video-controls-container">
+        <div class="timeline-container">
+          <div class="timeline">
+            <img class="preview-img" alt="Video Preview">
+            <div class="thumb-indicator"></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <!-- Play / Pause -->
+          <button id="play" class="btn play-pause-btn" aria-label="Play/Pause">
+            <i class="fa fa-play fa-2x"></i>
+          </button>
+
+          <!-- Stop Button -->
+          <button id="stop" class="btn" aria-label="Stop">
+            <i class="fa fa-stop fa-2x"></i>
+          </button>
+
+          <!-- Volume Slider -->
+          <div class="volume-container">
+            <input class="volume-slider" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+          </div>
+
+          <!-- Timeline -->
+          <input type="range" id="progress" class="progress" min="0" max="100" step="0.1" value="0" />
+          <span id="timestamp" class="timestamp">00:00</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
